@@ -1,0 +1,28 @@
+<!--新規投稿の部分-->
+<h2>New book</h2>
+<%= form_with model:@book do |f| %>
+  <p>Title</p>
+  <%= f.text_field :title %>
+  <p>Opinion</p>
+  <%= f.text_area :body %>
+  <%= f.submit 'Create Book' %>
+<% end %>
+
+<!--本の一覧の部分-->
+<h2>Books</h2>
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th>Title</th>
+      <th>Opinion</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>ユーザの写真</td>
+      <td>本のタイトル</td>
+      <td>本の感想</td>
+    </tr>
+  </tbody>
+</table>
