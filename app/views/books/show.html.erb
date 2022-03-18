@@ -3,12 +3,14 @@
   <tbody>
     <tr>
       <td>
+        <!--ユーザ詳細への-->
         <%= link_to user_path(@user) do %>
           <%= image_tag @user.get_profile_image(40,40) %><br>
           <%= @user.name %>
         <% end %>
       </td>
       <td>
+        <!--本詳細へのリンク-->
         <%= link_to book_path(@book) do %>
           <%= @book.title %>
         <% end %>
