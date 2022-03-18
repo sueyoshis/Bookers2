@@ -1,17 +1,18 @@
 <!--ユーザ情報-->
 <h2>User info</h2>
-<!--ここに写真-->
-<tbody>
-  <tr>
-    <th>name</th>
-    <th><%= current_user.name %></th>
-  </tr>
-  <tr>
-    <th>introduction</th>
-    <th><%= current_user.introduction %></th>
-  </tr>
-</tbody>
-
+<%= image_tag current_user.get_profile_image(63, 63) %>
+<table>
+  <tbody>
+    <tr>
+      <th>name</th>
+      <th><%= current_user.name %></th>
+    </tr>
+    <tr>
+      <th>introduction</th>
+      <th><%= current_user.introduction %></th>
+    </tr>
+  </tbody>
+</table>
 
 <!--新規投稿の部分-->
 <h2>New book</h2>
