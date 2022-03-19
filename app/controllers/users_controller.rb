@@ -1,9 +1,11 @@
 class UsersController < ApplicationController
   def index
+    @book_new = Book.new
     @users = User.all
   end
 
   def show
+    @book_new = Book.new
     @user = User.find (params[:id])
   end
 
@@ -19,7 +21,7 @@ class UsersController < ApplicationController
   def update
     user = User.find (params[:id])
     user.update(user_params)
-    redirect_to user_path(user)
+    redirect_to user_path(user) #ユーザの詳細へ遷移
   end
 
   private

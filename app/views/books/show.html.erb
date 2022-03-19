@@ -1,3 +1,35 @@
+<!--ユーザ情報-->
+<h2>User info</h2>
+<%= image_tag current_user.get_profile_image(63, 63) %>
+<table>
+  <tbody>
+    <tr>
+      <th>name</th>
+      <th><%= current_user.name %></th>
+    </tr>
+    <tr>
+      <th>introduction</th>
+      <th><%= current_user.introduction %></th>
+    </tr>
+  </tbody>
+</table>
+<!--ユーザ編集画面へのリンク-->
+<%= link_to 'ユーザ情報', edit_user_path(current_user.id) %>
+
+<!--新規投稿の部分-->
+<h2>New book</h2>
+<%= form_with model:@book_new do |f| %>
+  <p>Title</p>
+  <%= f.text_field :title %>
+  <p>Opinion</p>
+  <%= f.text_area :body %>
+  <%= f.submit 'Create Book' %>
+<% end %>
+
+<!--ユーザ情報-->
+<!--新規投稿の部分-->
+
+
 <h2>Book detail</h2>
 <table>
   <tbody>
