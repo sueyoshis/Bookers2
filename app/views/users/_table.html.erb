@@ -1,0 +1,30 @@
+<h2>Books</h2>
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th>Title</th>
+      <th>Opinion</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% books.each do |book| %>
+    <!--@books → books-->
+      <tr>
+        <td>
+          <!--ユーザ詳細へのリンク-->
+          <%= link_to user_path(book.user_id) do %>
+            <%= image_tag book.user.get_profile_image(40,40) %>
+          <% end %>
+        </td>
+        <td>
+          <!--本詳細へのリンク-->
+          <%= link_to book_path(book.id) do %>
+            <%= book.title %>
+          <% end %>
+        </td>
+        <td><%= book.body %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
