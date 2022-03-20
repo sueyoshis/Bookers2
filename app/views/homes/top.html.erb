@@ -1,8 +1,18 @@
-<h1>welcome to <strong><i class="fas fa-book"></i>Bookers!!</strong></h1>
-<p>in<strong><i class="fas fa-book"></i>Bookers</strong>,</p>
-<p>you can share and exchange your opinions , inpressions , and emotions</p>
-<p>about various books!</p>
-
-<%= link_to 'Log in', new_user_session_path %>
-
-<%= link_to 'Sign up',new_user_registration_path %>
+<div class="container">
+  <div class="row">
+    <div class="mx-auto col-11 col-sm-10 col-lg-8 col-xl-6">
+      <h1>welcome to <i class="fas fa-book"><strong></i>Bookers</strong>!!</h1>
+      <p>in<strong><i class="fas fa-book"></i>Bookers</strong>,</p>
+      <p>you can share and exchange your opinions , inpressions , and emotions</p>
+      <p>about various books!</p>
+      <div class="btn-wrapper col-10 mx-auto">
+        <%= link_to new_user_session_path do %>
+          <button type="button" class="btn-info btn-sm btn-block mb-3 sign-in">Log in</button>
+        <% end %>
+        <%= link_to new_user_registration_path do %>
+          <button type="button" class="btn-success btn-sm btn-block mb-3">Sign up</button>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
