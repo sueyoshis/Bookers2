@@ -1,4 +1,21 @@
 <h2>User info</h2>
+<!--ここにエラー表示-->
+<% if @user.errors.any? && @user.errors.count == 1 %>
+  <h3>1 error prohibited this obj from being saved:</h3>
+  <ul>
+    <% @user.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% elsif @user.errors.any? && @user.errors.count != 1 %>
+  <h3><%= @user.errors.count %> errors prohibited this obj from being saved:</h3>
+  <ul>
+    <% @user.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
 <%= form_with model:@user do |f| %>
   <p>Name</p>
   <%= f.text_field :name, autofocus: true, placeholder: "名前を入力してください"  %>
