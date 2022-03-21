@@ -7,7 +7,7 @@
     </div>
     <div class="col-md-8 offset-1">
       <h2>Book detail</h2>
-      <table>
+      <table class="table table-hover">
         <tbody>
           <tr>
             <td>
@@ -26,9 +26,17 @@
             <td><%= @book.body %></td>
             <% if @user == current_user %>
               <!--編集へのリンク/ログインユーザのみ-->
-              <td><%= link_to 'Edit', edit_book_path(@book.id) %></td>
+              <td>
+                <%= link_to edit_book_path(@book.id) do %>
+                  <button class="btn btn-sm btn-success">Edit</button>
+                <% end %>
+              </td>
               <!--削除へのリンク/ログインユーザのみ-->
-              <td><%= link_to 'Destroy', book_path(@book.id), method: :delete, "data-confirm" => "本当に消しますか？" %></td>
+              <td>
+                <%= link_to book_path(@book.id), method: :delete, "data-confirm" => "本当に消しますか？" do %>
+                  <button class="btn btn-sm btn-danger">Destroy</button>
+                <% end %>
+              </td>
             <% end %>
           </tr>
         </tbody>
