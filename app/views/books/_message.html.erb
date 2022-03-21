@@ -1,16 +1,18 @@
-<!--ここにエラー表示/@book→book-->
-<% if book.errors.any? && book.errors.count == 1 %>
-  <h3>1 error prohibited this obj from being saved:</h3>
-  <ul>
-    <% book.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
-    <% end %>
-  </ul>
-<% elsif book.errors.any? && book.errors.count != 1 %>
-  <h3><%= book.errors.count %> errors prohibited this obj from being saved:</h3>
-  <ul>
-    <% book.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
-    <% end %>
-  </ul>
-<% end %>
+<div class="text-danger">
+  <!--ここにエラー表示/@book→book-->
+  <% if book.errors.any? && book.errors.count == 1 %>
+    <h3>1 error prohibited this obj from being saved:</h3>
+    <ul>
+      <% book.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  <% elsif book.errors.any? && book.errors.count != 1 %>
+    <h3><%= book.errors.count %> errors prohibited this obj from being saved:</h3>
+    <ul>
+      <% book.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  <% end %>
+</div>
