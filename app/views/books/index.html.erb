@@ -1,9 +1,17 @@
-<!--ここにエラー表示-->
-<%= render 'message', book: @book %>
-
-<!--ユーザ情報-->
-<!--新規投稿の部分-->
-<%= render 'users/list', book_new: @book_new %>
-
-<!--本の一覧の部分-->
-<%= render 'users/table', books: @books %>
+<div class="container px-5 px-sm-0">
+  <!--ここにエラー表示-->
+  <div id="error-explanetion">
+    <%= render 'message', book: @book %>
+  </div>
+  <div class="row">
+    <div class="col-md-3">
+      <!--ユーザ情報-->
+      <!--新規投稿の部分-->
+      <%= render 'users/list', book_new: @book_new %>
+    </div>
+    <div class="col-md-8 offset-1">
+      <!--本の一覧の部分-->
+      <%= render 'users/table', books: @books %>
+    </div>
+  </div>
+</div>

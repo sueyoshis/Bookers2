@@ -1,9 +1,14 @@
-<!--ここにエラー表示-->
-<%= render 'books/message', book: @book %>
+<div class="container px-5 px-sm-0">
+  <div class="row">
+    <div class="col-md-3">
+      <!--ユーザ情報-->
+      <!--新規投稿の部分-->
+      <%= render 'list', book_new: @book_new %>
+    </div>
+    <div class="col-md-8 offset-1">
+      <!--ユーザの詳細部分-->
+      <%= render 'table', books: @books %>    </div>
+  </div>
+</div>
 
-<!--ユーザ情報-->
-<!--新規投稿の部分-->
-<%= render 'list', book_new: @book_new %>
 
-<!--ユーザの詳細部分-->
-<%= render 'table', books: @books %>
