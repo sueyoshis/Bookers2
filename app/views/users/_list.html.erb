@@ -1,7 +1,7 @@
 <!--ユーザ情報-->
 <h2>User info</h2>
 <%= image_tag current_user.get_profile_image(63, 63) %>
-<table>
+<table class="table">
   <tbody>
     <tr>
       <th>name</th>
@@ -13,17 +13,25 @@
     </tr>
   </tbody>
 </table>
-<!--ユーザ編集画面へのリンク-->
-<%= link_to edit_user_path(current_user.id) do %>
-<i class="fas fa-user-cog"></i>
-<% end %>
+<div class="row">
+  <!--ユーザ編集画面へのリンク-->
+  <%= link_to(edit_user_path(current_user.id), class: "btn btn-outline-secondary btn-block")do %>
+    <i class="fas fa-user-cog"></i>
+  <% end %>
+</div>
 <!--新規投稿の部分-->
-<h2>New book</h2>
+<h2 class="mt-3">New book</h2>
 <%= form_with model:book_new, url:books_path, method: :post do |f| %>
 <!--@book_new → book_new-->
-  <p>Title</p>
-  <%= f.text_field :title %>
-  <p>Opinion</p>
-  <%= f.text_area :body %>
-  <%= f.submit 'Create Book' %>
+  <div class="field mb-3">
+    <%= f.label :title, "Title" %>
+    <%= f.text_field :title, class: "form-control" %>
+  </div>
+  <div class="field mb-3">
+    <%= f.label :body, "Opinion" %>
+    <%= f.text_area :body, class: "form-control" %>
+  </div>
+  <div class="actions">
+    <%= f.submit 'Create Book', class: "btn btn-success"  %>
+  </div>
 <% end %>
