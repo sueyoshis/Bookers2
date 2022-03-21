@@ -1,24 +1,3 @@
-<!--ユーザ情報-->
-<h2>User info</h2>
-<%= image_tag current_user.get_profile_image(63, 63) %>
-<table class="table">
-  <tbody>
-    <tr>
-      <th>name</th>
-      <th><%= current_user.name %></th>
-    </tr>
-    <tr>
-      <th>introduction</th>
-      <th><%= current_user.introduction %></th>
-    </tr>
-  </tbody>
-</table>
-<div class="row">
-  <!--ユーザ編集画面へのリンク-->
-  <%= link_to(edit_user_path(current_user.id), class: "btn btn-outline-secondary btn-block")do %>
-    <i class="fas fa-user-cog"></i>
-  <% end %>
-</div>
 <!--新規投稿の部分-->
 <h2 class="mt-3">New book</h2>
 <%= form_with model:book_new, url:books_path, method: :post do |f| %>
